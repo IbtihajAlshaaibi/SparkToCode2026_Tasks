@@ -176,23 +176,66 @@
 
             // Task 10 - Word Position Finder
 
-            Console.WriteLine("Enter a sentence:");
-            string sentence = Console.ReadLine();
+            //Console.WriteLine("Enter a sentence:");
+            //string sentence = Console.ReadLine();
 
-            Console.WriteLine("Enter a word to search:");
-            string word = Console.ReadLine();
+            //Console.WriteLine("Enter a word to search:");
+            //string word = Console.ReadLine();
 
-            if (sentence.Contains(word))
+            //if (sentence.Contains(word))
+            //{
+            //    int firstPosition = sentence.IndexOf(word);
+            //    int lastPosition = sentence.LastIndexOf(word);
+
+            //    Console.WriteLine("First Position: " + firstPosition);
+            //    Console.WriteLine("Last Position: " + lastPosition);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Word not found.");
+            //}
+
+
+            //////////////////////////////////////////////////////////////////////////////////////
+
+            // Task 11 - One-Time Password (OTP) Generator
+
+            Random random = new Random();
+            int otp = random.Next(1000, 10000);
+
+            Console.WriteLine("OTP Code: " + otp);
+
+            for (int i = 1; i <= 3; i++)
             {
-                int firstPosition = sentence.IndexOf(word);
-                int lastPosition = sentence.LastIndexOf(word);
+                try
+                {
+                    Console.WriteLine("Enter the OTP:");
+                    int userOTP = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("First Position: " + firstPosition);
-                Console.WriteLine("Last Position: " + lastPosition);
-            }
-            else
-            {
-                Console.WriteLine("Word not found.");
+                    if (userOTP == otp)
+                    {
+                        Console.WriteLine("Verified");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect OTP");
+                    }
+
+                    if (i == 3)
+                    {
+                        Console.WriteLine("Verification Failed");
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Invalid Input");
+
+                    if (i == 3)
+                    {
+                        Console.WriteLine("Verification Failed");
+                    }
+                }
             }
 
 
