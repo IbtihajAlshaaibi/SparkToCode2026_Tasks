@@ -160,16 +160,46 @@
 
             // Task 9 - Round Up / Round Down Explorer
 
-            Console.WriteLine("Enter a decimal number:");
-            double number = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a decimal number:");
+            //double number = double.Parse(Console.ReadLine());
 
-            double rounded = Math.Round(number);
-            double roundedUp = Math.Ceiling(number);
-            double roundedDown = Math.Floor(number);
+            //double rounded = Math.Round(number);
+            //double roundedUp = Math.Ceiling(number);
+            //double roundedDown = Math.Floor(number);
 
-            Console.WriteLine("Nearest Whole Number: " + rounded);
-            Console.WriteLine("Always Rounded Up: " + roundedUp);
-            Console.WriteLine("Always Rounded Down: " + roundedDown);
+            //Console.WriteLine("Nearest Whole Number: " + rounded);
+            //Console.WriteLine("Always Rounded Up: " + roundedUp);
+            //Console.WriteLine("Always Rounded Down: " + roundedDown);
+
+
+            //////////////////////////////////////////////////////////////////////////////////////
+
+            // Task 10 - Word Position Finder
+
+            Console.WriteLine("Enter a sentence:");
+            string sentence = Console.ReadLine();
+
+            Console.WriteLine("Enter a word to search:");
+            string word = Console.ReadLine();
+
+            if (sentence.Contains(word))
+            {
+                int firstPosition = sentence.IndexOf(word);
+                int lastPosition = sentence.LastIndexOf(word);
+
+                Console.WriteLine("First Position: " + firstPosition);
+                Console.WriteLine("Last Position: " + lastPosition);
+            }
+            else
+            {
+                Console.WriteLine("Word not found.");
+            }
+
+
+
+
+
+
 
 
 
