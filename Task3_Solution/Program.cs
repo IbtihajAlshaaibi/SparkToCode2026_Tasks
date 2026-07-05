@@ -200,42 +200,70 @@
 
             // Task 11 - One-Time Password (OTP) Generator
 
-            Random random = new Random();
-            int otp = random.Next(1000, 10000);
+            //Random random = new Random();
+            //int otp = random.Next(1000, 10000);
 
-            Console.WriteLine("OTP Code: " + otp);
+            //Console.WriteLine("OTP Code: " + otp);
 
-            for (int i = 1; i <= 3; i++)
+            //for (int i = 1; i <= 3; i++)
+            //{
+            //    try
+            //    {
+            //        Console.WriteLine("Enter the OTP:");
+            //        int userOTP = int.Parse(Console.ReadLine());
+
+            //        if (userOTP == otp)
+            //        {
+            //            Console.WriteLine("Verified");
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Incorrect OTP");
+            //        }
+
+            //        if (i == 3)
+            //        {
+            //            Console.WriteLine("Verification Failed");
+            //        }
+            //    }
+            //    catch
+            //    {
+            //        Console.WriteLine("Invalid Input");
+
+            //        if (i == 3)
+            //        {
+            //            Console.WriteLine("Verification Failed");
+            //        }
+            //    }
+            //}
+
+
+            //////////////////////////////////////////////////////////////////////////////////////
+
+            // Task 12 - Birthday Insights
+
+            try
             {
-                try
+                Console.WriteLine("Enter your date of birth (yyyy-MM-dd):");
+                DateTime birthDate = DateTime.Parse(Console.ReadLine());
+
+                DateTime today = DateTime.Today;
+
+                int age = today.Year - birthDate.Year;
+
+                if (today.Month < birthDate.Month ||
+                    (today.Month == birthDate.Month && today.Day < birthDate.Day))
                 {
-                    Console.WriteLine("Enter the OTP:");
-                    int userOTP = int.Parse(Console.ReadLine());
-
-                    if (userOTP == otp)
-                    {
-                        Console.WriteLine("Verified");
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect OTP");
-                    }
-
-                    if (i == 3)
-                    {
-                        Console.WriteLine("Verification Failed");
-                    }
+                    age--;
                 }
-                catch
-                {
-                    Console.WriteLine("Invalid Input");
 
-                    if (i == 3)
-                    {
-                        Console.WriteLine("Verification Failed");
-                    }
-                }
+                Console.WriteLine("Age: " + age);
+                Console.WriteLine("Day of Birth: " + birthDate.DayOfWeek);
+            }
+            catch
+            {
+                Console.WriteLine("Invalid Input");
             }
 
 
