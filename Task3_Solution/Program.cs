@@ -65,46 +65,65 @@
 
             // Task 5 - Grade Rounding System
 
-            Console.WriteLine("Enter your exam score:");
-            double score = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your exam score:");
+            //double score = double.Parse(Console.ReadLine());
 
-            double roundedScore = Math.Round(score);
+            //double roundedScore = Math.Round(score);
 
-            Console.WriteLine("Rounded Score: " + roundedScore);
+            //Console.WriteLine("Rounded Score: " + roundedScore);
 
-            if (roundedScore >= 60)
-            {
-                Console.WriteLine("Result: Pass");
-            }
-            else
-            {
-                Console.WriteLine("Result: Fail");
-            }
+            //if (roundedScore >= 60)
+            //{
+            //    Console.WriteLine("Result: Pass");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Result: Fail");
+            //}
 
             //////////////////////////////////////////////////////////////////////////////////////
 
             // Task 6 - Password Strength Checker
 
-            Console.WriteLine("Enter your password:");
-            string password = Console.ReadLine();
+            //Console.WriteLine("Enter your password:");
+            //string password = Console.ReadLine();
 
-            if (password.Length >= 8 && !password.ToLower().Contains("password"))
+            //if (password.Length >= 8 && !password.ToLower().Contains("password"))
+            //{
+            //    Console.WriteLine("Strong Password");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Weak Password");
+
+            //    if (password.Length < 8)
+            //    {
+            //        Console.WriteLine("Reason: Password must be at least 8 characters");
+            //    }
+
+            //    if (password.ToLower().Contains("password"))
+            //    {
+            //        Console.WriteLine("Reason: Password must not contain the word 'password'");
+            //    }
+            //}
+
+            //////////////////////////////////////////////////////////////////////////////////////
+
+            // Task 7 - Clean Name Comparator
+
+            Console.WriteLine("Enter the first name:");
+            string name1 = Console.ReadLine();
+
+            Console.WriteLine("Enter the second name:");
+            string name2 = Console.ReadLine();
+
+            if (name1.Trim().ToUpper() == name2.Trim().ToUpper())
             {
-                Console.WriteLine("Strong Password");
+                Console.WriteLine("Match");
             }
             else
             {
-                Console.WriteLine("Weak Password");
-
-                if (password.Length < 8)
-                {
-                    Console.WriteLine("Reason: Password must be at least 8 characters");
-                }
-
-                if (password.ToLower().Contains("password"))
-                {
-                    Console.WriteLine("Reason: Password must not contain the word 'password'");
-                }
+                Console.WriteLine("No Match");
             }
 
         }
