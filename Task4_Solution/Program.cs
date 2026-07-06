@@ -50,29 +50,40 @@
         //}
 
         // Task 7
-        static string GetGradeLetter(int score)
+        //static string GetGradeLetter(int score)
+        //{
+        //    if (score >= 90)
+        //    {
+        //        return "A";
+        //    }
+        //    else if (score >= 80)
+        //    {
+        //        return "B";
+        //    }
+        //    else if (score >= 70)
+        //    {
+        //        return "C";
+        //    }
+        //    else if (score >= 60)
+        //    {
+        //        return "D";
+        //    }
+        //    else
+        //    {
+        //        return "F";
+        //    }
+        //}
+
+
+        // Task 8
+        static void Countdown(int start)
         {
-            if (score >= 90)
+            for (int i = start; i >= 1; i--)
             {
-                return "A";
-            }
-            else if (score >= 80)
-            {
-                return "B";
-            }
-            else if (score >= 70)
-            {
-                return "C";
-            }
-            else if (score >= 60)
-            {
-                return "D";
-            }
-            else
-            {
-                return "F";
+                Console.WriteLine(i);
             }
         }
+
 
 
 
@@ -151,12 +162,22 @@
 
 
             // Task 7
-            Console.Write("Enter your score: ");
-            int score = int.Parse(Console.ReadLine());
+            //Console.Write("Enter your score: ");
+            //int score = int.Parse(Console.ReadLine());
 
-            string grade = GetGradeLetter(score);
+            //string grade = GetGradeLetter(score);
 
-            Console.WriteLine("Grade: " + grade);
+            //Console.WriteLine("Grade: " + grade);
+
+
+            ////////////////////////////////////////////////////////////////////
+
+
+            // Task 8
+            Console.Write("Enter starting number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            Countdown(number);
 
 
 
