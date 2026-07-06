@@ -88,21 +88,35 @@
         // Task 9
 
         // Multiply 2 int parameters
-        static int Multiply(int a, int b)
-        {
-            return a * b;
-        }
+        //static int Multiply(int a, int b)
+        //{
+        //    return a * b;
+        //}
 
         // Multiply 2 double parameters
-        static double Multiply(double a, double b)
-        {
-            return a * b;
-        }
+        //static double Multiply(double a, double b)
+        //{
+        //    return a * b;
+        //}
 
         // Multiply 3 int parameters
-        static int Multiply(int a, int b, int c)
+        //static int Multiply(int a, int b, int c)
+        //{
+        //    return a * b * c;
+        //}
+
+
+        // Task 10
+        // Square 
+        static double CalculateArea(double side)
         {
-            return a * b * c;
+            return side * side;
+        }
+
+        // Rectangle 
+        static double CalculateArea(double length, double width)
+        {
+            return length * width;
         }
 
 
@@ -211,14 +225,50 @@
 
 
             // Task 9
-            int result1 = Multiply(3, 4);
-            Console.WriteLine( result1);
+            //int result1 = Multiply(3, 4);
+            //Console.WriteLine( result1);
 
-            double result2 = Multiply(2.5, 4.0);
-            Console.WriteLine( result2);
+            //double result2 = Multiply(2.5, 4.0);
+            //Console.WriteLine( result2);
 
-            int result3 = Multiply(2, 3, 4);
-            Console.WriteLine( result3);
+            //int result3 = Multiply(2, 3, 4);
+            //Console.WriteLine( result3);
+
+
+
+            ////////////////////////////////////////////////////////////////////
+
+
+            // Task 10
+            Console.WriteLine("Choose shape:");
+            Console.WriteLine("1) Square");
+            Console.WriteLine("2) Rectangle");
+            Console.Write("Enter choice: ");
+            int choice = int.Parse(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                Console.Write("Enter side: ");
+                double side = double.Parse(Console.ReadLine());
+
+                double area = CalculateArea(side);
+                Console.WriteLine("Square Area = " + area);
+            }
+            else if (choice == 2)
+            {
+                Console.Write("Enter length: ");
+                double length = double.Parse(Console.ReadLine());
+
+                Console.Write("Enter width: ");
+                double width = double.Parse(Console.ReadLine());
+
+                double area = CalculateArea(length, width);
+                Console.WriteLine("Rectangle Area = " + area);
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice");
+            }
 
 
 
