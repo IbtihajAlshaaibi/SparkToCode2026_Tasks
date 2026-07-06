@@ -17,13 +17,27 @@
         //}
 
         // Task 3
-        static double CelsiusToFahrenheit(double celsius)
+        //static double CelsiusToFahrenheit(double celsius)
+        //{
+        //    return (celsius * 9 / 5) + 32;
+        //}
+
+        // Task 4
+        static void DisplayMenu()
         {
-            return (celsius * 9 / 5) + 32;
+            Console.WriteLine("1. Start");
+            Console.WriteLine("2. Help");
+            Console.WriteLine("3. Exit");
         }
+
+
+
+
+
 
         static void Main(string[] args)
         {
+
             // Task 1
             //Console.Write("Enter your name: ");
             //string userName = Console.ReadLine();
@@ -43,13 +57,19 @@
 
 
             // Task 3
-            Console.Write("Enter temperature in Celsius: ");
-            double celsius = double.Parse(Console.ReadLine());
+            //Console.Write("Enter temperature in Celsius: ");
+            //double celsius = double.Parse(Console.ReadLine());
 
-            double fahrenheit = CelsiusToFahrenheit(celsius);
+            //double fahrenheit = CelsiusToFahrenheit(celsius);
 
-            Console.WriteLine("Temperature in Fahrenheit: " + fahrenheit);
+            //Console.WriteLine("Temperature in Fahrenheit: " + fahrenheit);
 
+
+            ////////////////////////////////////////////////////////////////////
+
+
+            // Task 4
+            DisplayMenu();
 
 
 
