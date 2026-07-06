@@ -23,11 +23,18 @@
         //}
 
         // Task 4
-        static void DisplayMenu()
+        //static void DisplayMenu()
+        //{
+        //    Console.WriteLine("1. Start");
+        //    Console.WriteLine("2. Help");
+        //    Console.WriteLine("3. Exit");
+        //}
+
+
+        // Task 5
+        static bool IsEven(int number)
         {
-            Console.WriteLine("1. Start");
-            Console.WriteLine("2. Help");
-            Console.WriteLine("3. Exit");
+            return number % 2 == 0;
         }
 
 
@@ -69,8 +76,24 @@
 
 
             // Task 4
-            DisplayMenu();
+            //DisplayMenu();
 
+
+            ////////////////////////////////////////////////////////////////////
+
+
+            // Task 5
+            Console.Write("Enter a number: ");
+            int num = int.Parse(Console.ReadLine());
+
+            if (IsEven(num))
+            {
+                Console.WriteLine("Even");
+            }
+            else
+            {
+                Console.WriteLine("Odd");
+            }
 
 
 
