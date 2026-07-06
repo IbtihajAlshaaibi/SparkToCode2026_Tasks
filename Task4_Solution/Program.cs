@@ -32,11 +32,22 @@
 
 
         // Task 5
-        static bool IsEven(int number)
+        //static bool IsEven(int number)
+        //{
+        //    return number % 2 == 0;
+        //}
+
+        // Task 6
+        static double CalculateArea(double length, double width)
         {
-            return number % 2 == 0;
+            return length * width;
         }
 
+
+        static double CalculatePerimeter(double length, double width)
+        {
+            return 2 * (length + width);
+        }
 
 
 
@@ -83,17 +94,33 @@
 
 
             // Task 5
-            Console.Write("Enter a number: ");
-            int num = int.Parse(Console.ReadLine());
+            //Console.Write("Enter a number: ");
+            //int num = int.Parse(Console.ReadLine());
 
-            if (IsEven(num))
-            {
-                Console.WriteLine("Even");
-            }
-            else
-            {
-                Console.WriteLine("Odd");
-            }
+            //if (IsEven(num))
+            //{
+            //    Console.WriteLine("Even");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Odd");
+            //}
+
+            ////////////////////////////////////////////////////////////////////
+
+
+            // Task 6
+            Console.Write("Enter the length: ");
+            double length = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter the width: ");
+            double width = double.Parse(Console.ReadLine());
+
+            double area = CalculateArea(length, width);
+            double perimeter = CalculatePerimeter(length, width);
+
+            Console.WriteLine("Area = " + area);
+            Console.WriteLine("Perimeter = " + perimeter);
 
 
 
