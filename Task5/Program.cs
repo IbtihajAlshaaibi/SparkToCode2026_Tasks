@@ -44,17 +44,35 @@
 
             // Task 3 - Browsing History Stack
 
-            Stack<string> browserHistory = new Stack<string>();
+            //Stack<string> browserHistory = new Stack<string>();
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.Write("Enter website " + (i + 1) + ": ");
+            //    browserHistory.Push(Console.ReadLine());
+            //}
+
+            //browserHistory.Pop();
+
+            //Console.WriteLine("You are now on: " + browserHistory.Peek());
+
+
+            /////////////////////////////////////////////////////////////////////////////////
+
+            // Task 4 - Customer Service Queue
+
+            Queue<string> customers = new Queue<string>();
 
             for (int i = 0; i < 3; i++)
             {
-                Console.Write("Enter website " + (i + 1) + ": ");
-                browserHistory.Push(Console.ReadLine());
+                Console.Write("Enter customer " + (i + 1) + ": ");
+                customers.Enqueue(Console.ReadLine());
             }
 
-            browserHistory.Pop();
+            string servedCustomer = customers.Dequeue();
 
-            Console.WriteLine("You are now on: " + browserHistory.Peek());
+            Console.WriteLine("Served customer: " + servedCustomer);
+
         }
     }
 }
