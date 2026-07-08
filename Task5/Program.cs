@@ -61,17 +61,45 @@
 
             // Task 4 - Customer Service Queue
 
-            Queue<string> customers = new Queue<string>();
+            //Queue<string> customers = new Queue<string>();
 
-            for (int i = 0; i < 3; i++)
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.Write("Enter customer " + (i + 1) + ": ");
+            //    customers.Enqueue(Console.ReadLine());
+            //}
+
+            //string servedCustomer = customers.Dequeue();
+
+            //Console.WriteLine("Served customer: " + servedCustomer);
+
+
+            /////////////////////////////////////////////////////////////////////////////////
+            // Task 5 - Array Grade Range
+
+            int[] grades = new int[5];
+
+            for (int i = 0; i < grades.Length; i++)
             {
-                Console.Write("Enter customer " + (i + 1) + ": ");
-                customers.Enqueue(Console.ReadLine());
+                Console.Write("Enter grade " + (i + 1) + ": ");
+                grades[i] = int.Parse(Console.ReadLine());
             }
 
-            string servedCustomer = customers.Dequeue();
+            Array.Sort(grades);
 
-            Console.WriteLine("Served customer: " + servedCustomer);
+            int sum = 0;
+
+            for (int i = 0; i < grades.Length; i++)
+            {
+                sum += grades[i];
+            }
+
+            double average = (double)sum / grades.Length;
+
+            Console.WriteLine("Results:");
+            Console.WriteLine("Lowest Grade: " + grades[0]);
+            Console.WriteLine("Highest Grade: " + grades[grades.Length - 1]);
+            Console.WriteLine("Average Grade: " + average);
 
         }
     }
