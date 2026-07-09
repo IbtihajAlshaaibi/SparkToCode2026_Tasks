@@ -2,21 +2,43 @@
 {
     internal class Program
     {
-        static double CalculateAverage(List<int> grades)
-        {
-            int sum = 0;
+        //Task 9:
+        //static double CalculateAverage(List<int> grades)
+        //{
+        //    int sum = 0;
 
-            for (int i = 0; i < grades.Count; i++)
+        //    for (int i = 0; i < grades.Count; i++)
+        //    {
+        //        sum += grades[i];
+        //    }
+
+        //    return (double)sum / grades.Count;
+        //}
+
+        //static int FindFirstFailing(List<int> grades)
+        //{
+        //    return grades.Find(x => x < 60);
+        //}
+
+
+
+        //Task 10:
+
+        static Queue<string> RemoveJob(Queue<string> jobs, string jobName)
+        {
+            Queue<string> newQueue = new Queue<string>();
+
+            while (jobs.Count > 0)
             {
-                sum += grades[i];
+                string job = jobs.Dequeue();
+
+                if (job != jobName)
+                {
+                    newQueue.Enqueue(job);
+                }
             }
 
-            return (double)sum / grades.Count;
-        }
-
-        static int FindFirstFailing(List<int> grades)
-        {
-            return grades.Find(x => x < 60);
+            return newQueue;
         }
         static void Main(string[] args)
         {
@@ -211,29 +233,69 @@
 
             // Task 9 - Grade Analyzer with Functions
 
-            List<int> grades = new List<int>();
+            //List<int> grades = new List<int>();
 
-            Console.Write("How many grades do you want to enter? ");
-            int number = int.Parse(Console.ReadLine());
+            //Console.Write("How many grades do you want to enter? ");
+            //int number = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < number; i++)
+            //for (int i = 0; i < number; i++)
+            //{
+            //    Console.Write("Enter grade " + (i + 1) + ": ");
+            //    grades.Add(int.Parse(Console.ReadLine()));
+            //}
+
+            //double average = CalculateAverage(grades);
+            //int firstFailing = FindFirstFailing(grades);
+
+            //Console.WriteLine("Average Grade: " + average);
+
+            //if (firstFailing == 0)
+            //{
+            //    Console.WriteLine("No failing grades");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("First failing grade: " + firstFailing);
+            //}
+
+
+            /////////////////////////////////////////////////////////////////////////////////
+
+            // Task 10 - Print Queue Manager
+
+            Queue<string> printQueue = new Queue<string>();
+
+            string job = "";
+
+            while (job != "done")
             {
-                Console.Write("Enter grade " + (i + 1) + ": ");
-                grades.Add(int.Parse(Console.ReadLine()));
+                Console.Write("Enter print job (or type 'done'): ");
+                job = Console.ReadLine();
+
+                if (job != "done")
+                {
+                    printQueue.Enqueue(job);
+                }
             }
 
-            double average = CalculateAverage(grades);
-            int firstFailing = FindFirstFailing(grades);
 
-            Console.WriteLine("Average Grade: " + average);
+            Console.WriteLine("Print Queue:");
 
-            if (firstFailing == 0)
+            foreach (string item in printQueue)
             {
-                Console.WriteLine("No failing grades");
+                Console.WriteLine(item);
             }
-            else
+
+            Console.Write("Enter job to cancel: ");
+            string cancelJob = Console.ReadLine();
+
+            printQueue = RemoveJob(printQueue, cancelJob);
+
+            Console.WriteLine("Print Queue After Cancellation:");
+
+            foreach (string item in printQueue)
             {
-                Console.WriteLine("First failing grade: " + firstFailing);
+                Console.WriteLine(item);
             }
         }
     }
