@@ -261,7 +261,7 @@
 
             /////////////////////////////////////////////////////////////////////////////////
 
-            //Task 10 - Print Queue Manager
+            // Task 10 - Print Queue Manager
 
             Queue<string> printQueue = new Queue<string>();
 
