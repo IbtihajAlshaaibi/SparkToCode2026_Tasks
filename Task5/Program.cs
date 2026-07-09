@@ -77,29 +77,67 @@
             /////////////////////////////////////////////////////////////////////////////////
             // Task 5 - Array Grade Range
 
-            int[] grades = new int[5];
+            //int[] grades = new int[5];
 
-            for (int i = 0; i < grades.Length; i++)
+            //for (int i = 0; i < grades.Length; i++)
+            //{
+            //    Console.Write("Enter grade " + (i + 1) + ": ");
+            //    grades[i] = int.Parse(Console.ReadLine());
+            //}
+
+            //Array.Sort(grades);
+
+            //int sum = 0;
+
+            //for (int i = 0; i < grades.Length; i++)
+            //{
+            //    sum += grades[i];
+            //}
+
+            //double average = (double)sum / grades.Length;
+
+            //Console.WriteLine("Results:");
+            //Console.WriteLine("Lowest Grade: " + grades[0]);
+            //Console.WriteLine("Highest Grade: " + grades[grades.Length - 1]);
+            //Console.WriteLine("Average Grade: " + average);
+
+            /////////////////////////////////////////////////////////////////////////////////
+
+            //Task 6 - Filtered Shopping List
+
+            List<string> shoppingList = new List<string>();
+
+            string item = "";
+
+            while (item != "done")
             {
-                Console.Write("Enter grade " + (i + 1) + ": ");
-                grades[i] = int.Parse(Console.ReadLine());
+                Console.Write("Enter an item (or type 'done' to finish): ");
+                item = Console.ReadLine();
+
+                if (item != "done")
+                {
+                    shoppingList.Add(item);
+                }
             }
 
-            Array.Sort(grades);
+            Console.WriteLine("Shopping List:");
 
-            int sum = 0;
-
-            for (int i = 0; i < grades.Length; i++)
+            foreach (string product in shoppingList)
             {
-                sum += grades[i];
+                Console.WriteLine(product);
             }
 
-            double average = (double)sum / grades.Length;
+            Console.Write("Enter item to remove: ");
+            string removeItem = Console.ReadLine();
 
-            Console.WriteLine("Results:");
-            Console.WriteLine("Lowest Grade: " + grades[0]);
-            Console.WriteLine("Highest Grade: " + grades[grades.Length - 1]);
-            Console.WriteLine("Average Grade: " + average);
+            shoppingList.Remove(removeItem);
+
+            Console.WriteLine("Shopping List After Removal:");
+
+            foreach (string product in shoppingList)
+            {
+                Console.WriteLine(product);
+            }
 
         }
     }
