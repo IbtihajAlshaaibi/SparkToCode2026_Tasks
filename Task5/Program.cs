@@ -143,23 +143,52 @@
 
             // Task 7 - High Score Podium
 
-            List<int> scores = new List<int>();
+            //List<int> scores = new List<int>();
 
-            for (int i = 0; i < 5; i++)
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Console.Write("Enter score " + (i + 1) + ": ");
+            //    scores.Add(int.Parse(Console.ReadLine()));
+            //}
+
+            //scores.Sort();
+            //scores.Reverse();
+
+            //Console.WriteLine("Top 3 Scores:");
+            //Console.WriteLine("1st place: " + scores[0]);
+            //Console.WriteLine("2nd place: " + scores[1]);
+            //Console.WriteLine("3rd place: " + scores[2]);
+
+
+
+            /////////////////////////////////////////////////////////////////////////////////
+
+            // Task 8 - Undo Last Action
+
+            Stack<string> actions = new Stack<string>();
+
+            string action = "";
+
+            while (action != "stop")
             {
-                Console.Write("Enter score " + (i + 1) + ": ");
-                scores.Add(int.Parse(Console.ReadLine()));
+                Console.Write("Enter an action (or type 'stop' to finish): ");
+                action = Console.ReadLine();
+
+                if (action != "stop")
+                {
+                    actions.Push(action);
+                }
             }
 
-            scores.Sort();
-            scores.Reverse();
+            Console.WriteLine("Undo 1: " + actions.Pop());
+            Console.WriteLine("Undo 2: " + actions.Pop());
+   
+            Console.WriteLine("Remaining Actions:");
 
-            Console.WriteLine("Top 3 Scores:");
-            Console.WriteLine("1st place: " + scores[0]);
-            Console.WriteLine("2nd place: " + scores[1]);
-            Console.WriteLine("3rd place: " + scores[2]);
-
-
+            foreach (string item in actions)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
