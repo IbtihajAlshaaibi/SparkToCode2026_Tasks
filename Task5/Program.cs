@@ -2,6 +2,22 @@
 {
     internal class Program
     {
+        static double CalculateAverage(List<int> grades)
+        {
+            int sum = 0;
+
+            for (int i = 0; i < grades.Count; i++)
+            {
+                sum += grades[i];
+            }
+
+            return (double)sum / grades.Count;
+        }
+
+        static int FindFirstFailing(List<int> grades)
+        {
+            return grades.Find(x => x < 60);
+        }
         static void Main(string[] args)
         {
             //Task 1 - Fixed Grades Array
@@ -165,29 +181,59 @@
 
             // Task 8 - Undo Last Action
 
-            Stack<string> actions = new Stack<string>();
+            //Stack<string> actions = new Stack<string>();
 
-            string action = "";
+            //string action = "";
 
-            while (action != "stop")
+            //while (action != "stop")
+            //{
+            //    Console.Write("Enter an action (or type 'stop' to finish): ");
+            //    action = Console.ReadLine();
+
+            //    if (action != "stop")
+            //    {
+            //        actions.Push(action);
+            //    }
+            //}
+
+            //Console.WriteLine("Undo 1: " + actions.Pop());
+            //Console.WriteLine("Undo 2: " + actions.Pop());
+
+            //Console.WriteLine("Remaining Actions:");
+
+            //foreach (string item in actions)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            /////////////////////////////////////////////////////////////////////////////////
+
+            // Task 9 - Grade Analyzer with Functions
+
+            List<int> grades = new List<int>();
+
+            Console.Write("How many grades do you want to enter? ");
+            int number = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < number; i++)
             {
-                Console.Write("Enter an action (or type 'stop' to finish): ");
-                action = Console.ReadLine();
-
-                if (action != "stop")
-                {
-                    actions.Push(action);
-                }
+                Console.Write("Enter grade " + (i + 1) + ": ");
+                grades.Add(int.Parse(Console.ReadLine()));
             }
 
-            Console.WriteLine("Undo 1: " + actions.Pop());
-            Console.WriteLine("Undo 2: " + actions.Pop());
-   
-            Console.WriteLine("Remaining Actions:");
+            double average = CalculateAverage(grades);
+            int firstFailing = FindFirstFailing(grades);
 
-            foreach (string item in actions)
+            Console.WriteLine("Average Grade: " + average);
+
+            if (firstFailing == 0)
             {
-                Console.WriteLine(item);
+                Console.WriteLine("No failing grades");
+            }
+            else
+            {
+                Console.WriteLine("First failing grade: " + firstFailing);
             }
         }
     }
