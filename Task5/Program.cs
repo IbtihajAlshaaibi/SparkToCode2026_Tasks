@@ -269,7 +269,7 @@
 
             while (job != "done")
             {
-                Console.Write("Enter print job (or type 'done'): ");
+                Console.Write("Enter print job or type 'done': ");
                 job = Console.ReadLine();
 
                 if (job != "done")
